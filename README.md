@@ -1,40 +1,93 @@
-# Welcome to Remix!
+# Learning PRISMA with mongoDb
 
-- 📖 [Remix docs](https://remix.run/docs)
+After creating your project, whatever it is, react, remix, next etc. Set up your database, copy the connection string
 
-## Development
+"mongodb+srv://test:[password]@cluster0.sdg0iit.mongodb.net/" `Something like this`
 
-Run the dev server:
 
-```shellscript
-npm run dev
-```
+Then save it somehwere, you will need it to connect prisma to your database
 
-## Deployment
+## Set up prisma
 
-First, build your app for production:
+### Install prisma
 
-```sh
-npm run build
-```
+`npm i -D prisma`  
 
-Then run the app in production mode:
+### Initialize prisma in your project
 
-```sh
-npm start
-```
+`npx prisma init`
 
-Now you'll need to pick a host to deploy it to.
+This initiallie prisma creating a folder called 'prisma' with a file init called schema.prisma 
 
-### DIY
+But if you add the datasource to your command say
 
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
+`npx prisma init --datasource-provider [database provider name]` 
 
-Make sure to deploy the output of `npm run build`
+eg
 
-- `build/server`
-- `build/client`
+`npx prisma init --datasource-provider mongodb`
 
-## Styling
+This will create a env file also with a database_url (it's fake though)
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+`DATABASE_URL="mongodb+srv://test:[password]@cluster0.sdg0iit.mongodb.net/"`
+
+now replace the url with the one you copied earlier, yeah you get.
+
+make sure you maintain the `DATABASE_URL` format because in your schema.prisma, that is the exact name it looks for, when it scans your env file.
+
+### schema.prisma file
+
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+
+You see the env("DATABASE_URL") line, very important, make sure the content inside is the same as the one in your env file
+
+`DATABASE_URL="mongodb+srv://test:[password]@cluster0.sdg0iit.mongodb.net/"`
+
+This schema.prisma is where you define all your schema
+
+model User {
+  
+}
+
+This is how all your model or schema looks like. Inside you define all your fields eg name, email, password etc.
+
+model User {
+  Id         String             @id @default(auto()) @map("_id") @db.ObjectId
+}
+
+Id is the field
+String is the datatype it can be boolean, int etc
+ @id @default(auto()) is the way you want it to appear in the database, it let Prisma know this is a unique identifier with the @id attribute. 
+ @map("_id") @db.ObjectId is the way we tell prisma that, hey, I know that you originally create an "_id" on every document you create, but, map my Id, to that _id. ie use mine as the _id. Get that? Well, you can choose not to, just let mongodb create it for you
+
+ model User {
+  email     String   @unique
+}
+
+if i define my schema like this, mongodb will create an id for me...tada...
+
+a complate model will look like this
+
+model User {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  email     String   @unique
+  password  String
+}
+
+
+### push to prisma
+
+`npx prisma db push`
+
+This will
