@@ -97,3 +97,4 @@ This script will create the database and a collection names User, tada, youre in
 
 `npx prisma generate` will be our best friend. every time we make any new change to our schema, we run tht script to update our database
 
+Note: You do not need to run prisma db push because you have not added any new collections or indexes.
