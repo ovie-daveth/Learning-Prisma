@@ -37,7 +37,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\signup.tsx"
   );
-  import.meta.hot.lastModified = "1730494230720.393";
+  import.meta.hot.lastModified = "1730497103459.9526";
 }
 function SignUp() {
   _s();
@@ -56,56 +56,56 @@ function SignUp() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Layout, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "h-full justify-center items-center flex flex-col gap-y-4", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-5xl font-extrabold text-yellow-300", children: "Welcome to Kudos!" }, void 0, false, {
       fileName: "app/routes/signup.tsx",
-      lineNumber: 44,
+      lineNumber: 47,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "font-semibold text-slate-300", children: "Register In To Give Some Praise!" }, void 0, false, {
       fileName: "app/routes/signup.tsx",
-      lineNumber: 45,
+      lineNumber: 48,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("form", { method: "POST", className: "rounded-2xl bg-gray-200 p-6 w-96", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(FormField, { htmlFor: "email", label: "Email", value: formData.email, onChange: (e) => handleInputChange(e, "email") }, void 0, false, {
         fileName: "app/routes/signup.tsx",
-        lineNumber: 48,
+        lineNumber: 51,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(FormField, { htmlFor: "password", type: "password", label: "Password", value: formData.password, onChange: (e) => handleInputChange(e, "password") }, void 0, false, {
         fileName: "app/routes/signup.tsx",
-        lineNumber: 49,
+        lineNumber: 52,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(FormField, { htmlFor: "firstname", label: "First Name", value: formData.firstname, onChange: (e) => handleInputChange(e, "firstname") }, void 0, false, {
         fileName: "app/routes/signup.tsx",
-        lineNumber: 50,
+        lineNumber: 53,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(FormField, { htmlFor: "lastname", label: "Last Name", value: formData.lastname, onChange: (e) => handleInputChange(e, "lastname") }, void 0, false, {
         fileName: "app/routes/signup.tsx",
-        lineNumber: 51,
+        lineNumber: 54,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full text-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("input", { type: "submit", className: "rounded-xl mt-2 bg-yellow-300 px-3 py-2 text-blue-600 font-semibold transition duration-300 ease-in-out hover:bg-yellow-400 hover:-translate-y-1", value: "Sign Up" }, void 0, false, {
         fileName: "app/routes/signup.tsx",
-        lineNumber: 53,
+        lineNumber: 56,
         columnNumber: 13
       }, this) }, void 0, false, {
         fileName: "app/routes/signup.tsx",
-        lineNumber: 52,
+        lineNumber: 55,
         columnNumber: 11
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/signup.tsx",
-      lineNumber: 47,
+      lineNumber: 50,
       columnNumber: 9
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/signup.tsx",
-    lineNumber: 43,
+    lineNumber: 46,
     columnNumber: 9
   }, this) }, void 0, false, {
     fileName: "app/routes/signup.tsx",
-    lineNumber: 42,
+    lineNumber: 45,
     columnNumber: 10
   }, this);
 }
@@ -118,4 +118,4 @@ window.$RefreshSig$ = prevRefreshSig;
 export {
   SignUp as default
 };
-//# sourceMappingURL=/build/routes/signup-OB73XO2Z.js.map
+//# sourceMappingURL=/build/routes/signup-RVT3OEK3.js.map

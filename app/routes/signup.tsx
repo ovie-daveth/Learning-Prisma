@@ -2,6 +2,11 @@
 import { useState } from "react";
 import { FormField } from "~/components/form-field";
 import { Layout } from "~/components/layout";
+import { ActionFunction } from '@remix-run/node'
+
+export const action: ActionFunction = async ({ request }) => {
+  
+}
 
 export default function SignUp() {
 
