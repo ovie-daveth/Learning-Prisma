@@ -50,7 +50,7 @@ datasource db {
 
 You see the env("DATABASE_URL") line, very important, make sure the content inside is the same as the one in your env file
 
-`DATABASE_URL="mongodb+srv://test:[password]@cluster0.sdg0iit.mongodb.net/"`
+`DATABASE_URL="mongodb+srv://test:[password]@cluster0.sdg0iit.mongodb.net/databasename"`
 
 This schema.prisma is where you define all your schema
 
@@ -90,4 +90,10 @@ model User {
 
 `npx prisma db push`
 
-This will
+This script will create the database and a collection names User, tada, youre in guy!
+
+
+### npx prisma generate
+
+`npx prisma generate` will be our best friend. every time we make any new change to our schema, we run tht script to update our database
+
