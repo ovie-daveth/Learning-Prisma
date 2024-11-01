@@ -4,6 +4,7 @@ import { prisma } from './prisma.server'
 
 export const createUser = async (user: RegisterForm) => {
   const passwordHash = await bcrypt.hash(user.password, 10)
+  console.log("passing...")
   const newUser = await prisma.adninUser.create({
     data: {
       email: user.email,
@@ -14,5 +15,5 @@ export const createUser = async (user: RegisterForm) => {
       },
     },
   })
-  return { data: newUser, message: "Registered successfully" }
+  return { data: newUser, message: "Registered succefully" }
 }

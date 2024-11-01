@@ -13,11 +13,20 @@ import {
 } from "/build/_shared/chunk-O2VVDZ2D.js";
 import "/build/_shared/chunk-UWV35TSL.js";
 import {
+  __commonJS,
   __toESM
 } from "/build/_shared/chunk-PNG5AS42.js";
 
+// empty-module:../utils/auth.server
+var require_auth = __commonJS({
+  "empty-module:../utils/auth.server"(exports, module) {
+    module.exports = {};
+  }
+});
+
 // app/routes/signup.tsx
 var import_react = __toESM(require_react(), 1);
+var import_auth = __toESM(require_auth(), 1);
 var import_jsx_dev_runtime = __toESM(require_jsx_dev_runtime(), 1);
 if (!window.$RefreshReg$ || !window.$RefreshSig$ || !window.$RefreshRuntime$) {
   console.warn("remix:hmr: React Fast Refresh only works when the Remix compiler is running in development mode.");
@@ -37,13 +46,13 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\signup.tsx"
   );
-  import.meta.hot.lastModified = "1730497103459.9526";
+  import.meta.hot.lastModified = "1730499506571.7322";
 }
 function SignUp() {
   _s();
   const [formData, setFormData] = (0, import_react.useState)({
-    firstname: "",
-    lastname: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: ""
   });
@@ -53,63 +62,96 @@ function SignUp() {
       [field]: event.target.value
     }));
   };
+  const RegisterUser = async (e) => {
+    e.preventDefault();
+    try {
+      console.log(formData);
+      await (0, import_auth.Register)(formData);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Layout, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "h-full justify-center items-center flex flex-col gap-y-4", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-5xl font-extrabold text-yellow-300", children: "Welcome to Kudos!" }, void 0, false, {
       fileName: "app/routes/signup.tsx",
-      lineNumber: 47,
+      lineNumber: 96,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "font-semibold text-slate-300", children: "Register In To Give Some Praise!" }, void 0, false, {
       fileName: "app/routes/signup.tsx",
-      lineNumber: 48,
+      lineNumber: 97,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("form", { method: "POST", className: "rounded-2xl bg-gray-200 p-6 w-96", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("form", { onSubmit: RegisterUser, className: "rounded-2xl bg-gray-200 p-6 w-96", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(FormField, { htmlFor: "email", label: "Email", value: formData.email, onChange: (e) => handleInputChange(e, "email") }, void 0, false, {
         fileName: "app/routes/signup.tsx",
-        lineNumber: 51,
+        lineNumber: 100,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(FormField, { htmlFor: "password", type: "password", label: "Password", value: formData.password, onChange: (e) => handleInputChange(e, "password") }, void 0, false, {
         fileName: "app/routes/signup.tsx",
-        lineNumber: 52,
+        lineNumber: 101,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(FormField, { htmlFor: "firstname", label: "First Name", value: formData.firstname, onChange: (e) => handleInputChange(e, "firstname") }, void 0, false, {
-        fileName: "app/routes/signup.tsx",
-        lineNumber: 53,
-        columnNumber: 11
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(FormField, { htmlFor: "lastname", label: "Last Name", value: formData.lastname, onChange: (e) => handleInputChange(e, "lastname") }, void 0, false, {
-        fileName: "app/routes/signup.tsx",
-        lineNumber: 54,
-        columnNumber: 11
-      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(
+        FormField,
+        {
+          htmlFor: "firstName",
+          label: "First Name",
+          value: formData.firstName,
+          onChange: (e) => handleInputChange(e, "firstName")
+        },
+        void 0,
+        false,
+        {
+          fileName: "app/routes/signup.tsx",
+          lineNumber: 102,
+          columnNumber: 10
+        },
+        this
+      ),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(
+        FormField,
+        {
+          htmlFor: "lastName",
+          label: "Last Name",
+          value: formData.lastName,
+          onChange: (e) => handleInputChange(e, "lastName")
+        },
+        void 0,
+        false,
+        {
+          fileName: "app/routes/signup.tsx",
+          lineNumber: 104,
+          columnNumber: 11
+        },
+        this
+      ),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full text-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("input", { type: "submit", className: "rounded-xl mt-2 bg-yellow-300 px-3 py-2 text-blue-600 font-semibold transition duration-300 ease-in-out hover:bg-yellow-400 hover:-translate-y-1", value: "Sign Up" }, void 0, false, {
         fileName: "app/routes/signup.tsx",
-        lineNumber: 56,
+        lineNumber: 107,
         columnNumber: 13
       }, this) }, void 0, false, {
         fileName: "app/routes/signup.tsx",
-        lineNumber: 55,
+        lineNumber: 106,
         columnNumber: 11
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/signup.tsx",
-      lineNumber: 50,
+      lineNumber: 99,
       columnNumber: 9
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/signup.tsx",
-    lineNumber: 46,
+    lineNumber: 95,
     columnNumber: 9
   }, this) }, void 0, false, {
     fileName: "app/routes/signup.tsx",
-    lineNumber: 45,
+    lineNumber: 94,
     columnNumber: 10
   }, this);
 }
-_s(SignUp, "21U9lp9WUpwP6RSmYEv1/iGGM4M=");
+_s(SignUp, "LzCYUm8m7AB3dpJvEAchFkRqJ3c=");
 _c = SignUp;
 var _c;
 $RefreshReg$(_c, "SignUp");
@@ -118,4 +160,4 @@ window.$RefreshSig$ = prevRefreshSig;
 export {
   SignUp as default
 };
-//# sourceMappingURL=/build/routes/signup-RVT3OEK3.js.map
+//# sourceMappingURL=/build/routes/signup-W63WQXVH.js.map
